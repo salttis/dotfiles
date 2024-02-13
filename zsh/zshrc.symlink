@@ -1,0 +1,33 @@
+if [[ -z "$ZSH_CONFIG" ]]; then
+    echo "You need to set the ZSH_CONFIG env variable to the path where"
+    echo "the zsh config is located. You can do that in ~/.zshenv or in"
+    echo "~/.extra-env.zsh"
+fi
+
+# Stuff that doesn't export environment variables (those go in .zshenv).
+#source "$ZSH_CONFIG/lib/fpath.zsh"
+#source "$ZSH_CONFIG/lib/options.zsh"
+#source "$ZSH_CONFIG/lib/zstyle.zsh"
+#source "$ZSH_CONFIG/lib/keybindings.zsh"
+#source "$ZSH_CONFIG/lib/autoloads.zsh"
+#source "$ZSH_CONFIG/lib/aliases.zsh"
+
+# Source antigen bundles and apply everything
+#source $(brew --prefix)/share/antigen/antigen.zsh
+#antigen bundle zsh-users/zsh-completions src
+#antigen bundle zsh-users/zsh-syntax-highlighting
+#antigen bundle zsh-users/zsh-history-substring-search
+#antigen bundle hlissner/zsh-autopair
+#antigen bundle cpitt/zsh-dotenv
+#antigen apply
+
+# Source non version controlled files only if they exist.
+[[ -s "$HOME/.zshrc-extra" ]] && source "$HOME/.zshrc-extra"
+
+# If there is a .env file in the directory where zsh is started, source it.
+if [[ -f .env ]]; then
+    source .env
+fi
+
+# Choose the prompt.
+#prompt ${ZSH_PROMPT:-freedom}

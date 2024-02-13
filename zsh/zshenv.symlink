@@ -1,0 +1,31 @@
+# Path to the dotfiles.
+export DOTFILES="$HOME/.dotfiles"
+
+# zsh config.
+export ZSH_CONFIG="$DOTFILES/zsh"
+#export ZSH_PROMPT="freedom"
+
+# Prefer Finnish and use UTF-8
+export LC_ALL="fi_FI.UTF-8"
+export LANG="fi_FI.UTF-8"
+
+# Start with a clean slate, with only the scripts in `~bin`.
+PATH="$HOME/bin"
+
+# Standard PATH entries.
+export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:/usr/local/bin"
+export PATH="$PATH:/usr/bin"
+export PATH="$PATH:/usr/sbin"
+export PATH="$PATH:/bin"
+export PATH="$PATH:/sbin"
+
+export EDITOR="code --wait"
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Use a TTY in GPG.
+export GPG_TTY="$(tty)"
+
+[[ -s "$HOME/.zshenv-extra" ]] && source "$HOME/.zshenv-extra"

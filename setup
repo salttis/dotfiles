@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+set -e
+
+export SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export DOTFILES="${DOTFILES:-$SCRIPT_DIR}"
+
+. $DOTFILES/lib/functions.sh
+
+check_system() {
+	echo_info "Checking system..."
+	local _osname=$(uname)
+	if [ "$_osname" != "Darwin" ]; then
+		fail "Non-Apple system detected."
+	fi
+}
+
+update_dotfiles() {
+	if [ -d "$DOTFILES/.git" ]; then
+		echo_info "Updating dotfiles..."
+		git --work-tree="$DOTFILES" --git-dir="$DOTFILES/.git" pull origin master
+	fi
+}
+
+create_symlinks() {
+	local _files
+	local _symlinked
+
+	echo_info "Symlinking all files ending in '.symlink'"
+	
+	_files=$(find "$DOTFILES" -name '*.symlink')
+	for abs_file in $_files; do
+		_symlinked=".$(basename "${abs_file%.symlink}")"
+		ln -sfv "$abs_file" "$HOME/$_symlinked"
+	done
+
+	echo_info "Symlinking SSH config"
+
+	mkdir -p "$HOME/.ssh"
+	ln -sfv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Synced Applications/ssh/config" "$HOME/.ssh/config"
+
+	echo
+}
+
+run_install_scripts() {
+	for file in $(find $DOTFILES -name 'install.sh'); do
+		echo_info "Running ${file#$DOTFILES/}..."
+		bash "$file"
+	done
+	echo
+}
+
+main() {
+	check_system
+	update_dotfiles
+	create_symlinks
+	run_install_scripts
+}
+
+main "$@"
