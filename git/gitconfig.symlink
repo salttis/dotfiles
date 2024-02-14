@@ -1,0 +1,6 @@
+[user]
+    name = Juri Saltbacka
+    email = juri.saltbacka@gmail.com
+
+[includeIf "gitdir:~/Work/**"]
+    path = ~/.gitconfig.work
