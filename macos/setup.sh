@@ -139,6 +139,9 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Make the Dock smaller
 defaults write com.apple.dock tilesize -int 48
 
+# Hide recent applications from dock
+defaults write com.apple.dock show-recents -bool false
+
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
 
