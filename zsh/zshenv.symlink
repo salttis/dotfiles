@@ -9,6 +9,9 @@ export ZSH_CONFIG="$DOTFILES/zsh"
 export LC_ALL="fi_FI.UTF-8"
 export LANG="fi_FI.UTF-8"
 
+# Default .config folder
+XDG_CONFIG_HOME="$HOME/.config"
+
 # Start with a clean slate, with only the scripts in `~bin`.
 PATH="$HOME/bin"
 
@@ -20,6 +23,7 @@ export PATH="$PATH:/usr/sbin"
 export PATH="$PATH:/bin"
 export PATH="$PATH:/sbin"
 
+# Default editor
 export EDITOR="code --wait"
 
 # Homebrew
