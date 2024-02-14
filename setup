@@ -22,6 +22,11 @@ update_dotfiles() {
 	fi
 }
 
+ask_for_sudo_permissions() {
+	echo "Certain commands require root privileges so we need to initiate a valid sudo session."
+	sudo -v
+}
+
 create_symlinks() {
 	local _files
 	local _symlinked
@@ -61,6 +66,7 @@ run_setup_scripts() {
 main() {
 	check_system
 	update_dotfiles
+	ask_for_sudo_permissions
 	create_symlinks
 	run_install_scripts
 	run_setup_scripts
