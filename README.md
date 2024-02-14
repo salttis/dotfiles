@@ -15,3 +15,7 @@ $DOTFILES/setup
 - [ ] Figure out how to dynamically set the dotfile folder location
 - [ ] How to install Rise calendar
 - [ ] Look into [mackup](https://github.com/lra/mackup)
+- [ ] Kitty config
+- [ ] Automatically use custom Kitty icon
+- [ ] VSCode config
+- [ ] Setup neovim
