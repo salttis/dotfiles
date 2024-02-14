@@ -24,7 +24,7 @@ export PATH="$PATH:/bin"
 export PATH="$PATH:/sbin"
 
 # Default editor
-export EDITOR="code --wait"
+export EDITOR="code"
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
