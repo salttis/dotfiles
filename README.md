@@ -12,3 +12,4 @@ git clone [URL] ~/.dotfiles
 - [ ] Prompt for `softwareupdate -i -a` somewhere
 - [ ] Add default gitconfig for personal and work related projects
 - [ ] Figure out how to dynamically set the dotfile folder location
+- [ ] How to install Rise calendar
