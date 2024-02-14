@@ -1,8 +1,9 @@
 # Dotfiles
 
 ```sh
-git clone [URL] ~/.dotfiles
-~/.dotfiles/setup
+export DOTFILES="$HOME/.dotfiles"
+git clone git@github.com:3bola/dotfiles.git $DOTFILES
+$DOTFILES/setup
 ```
 
 ## TODO
