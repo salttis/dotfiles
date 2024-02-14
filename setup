@@ -50,11 +50,20 @@ run_install_scripts() {
 	echo
 }
 
+run_setup_scripts() {
+	for file in $(find $DOTFILES -name 'setup.sh'); do
+		echo_info "Setting up ${file#DOTFILES/}..."
+		bash "$file"
+	done
+	echo
+}
+
 main() {
 	check_system
 	update_dotfiles
 	create_symlinks
 	run_install_scripts
+	run_setup_scripts
 }
 
 main "$@"
