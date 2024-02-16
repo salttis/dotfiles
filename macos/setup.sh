@@ -237,8 +237,10 @@ dock_apps_to_add=(
     "/Applications/Spark Desktop.app"
     "/Applications/Rise.app"
     "/Applications/Slack.app"
+    "/Applications/Discord.app"
     "/System/Applications/App Store.app"
     "/System/Applications/System Settings.app"
+    "/Applications/Notion.app"
     "/Applications/kitty.app"
     "/Applications/Visual Studio Code.app"
 )
