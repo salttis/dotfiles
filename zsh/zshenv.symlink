@@ -32,4 +32,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Use a TTY in GPG.
 export GPG_TTY="$(tty)"
 
+# AWS Vault settings for projects
+export DEFAULT_AWS_VAULT_PROFILE=$(whoami)
+
 [[ -s "$HOME/.zshenv-extra" ]] && source "$HOME/.zshenv-extra"
