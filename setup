@@ -47,6 +47,21 @@ create_symlinks() {
 	echo
 }
 
+copy_example_files() {
+	local _files
+	local _example
+
+	echo_info "Copying all files ending in '.example' to your home directory."
+
+	_files=$(find "$DOTFILES" -name '*.example')
+	for abs_file in $_files; do
+		_example=".$(basename "${abs_file%.example}")"
+		cp -v -n "$abs_file" "$HOME/$_example"
+	done
+
+	echo
+}
+
 run_install_scripts() {
 	for file in $(find $DOTFILES -name 'install.sh'); do
 		echo_info "Running ${file#$DOTFILES/}..."
@@ -68,6 +83,7 @@ main() {
 	update_dotfiles
 	ask_for_sudo_permissions
 	create_symlinks
+	copy_example_files
 	run_install_scripts
 	run_setup_scripts
 }

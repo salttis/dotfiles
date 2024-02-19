@@ -1,0 +1,3 @@
+# Set up custom Gitlab instance for the VSCode extension
+GITLAB_WORKFLOW_INSTANCE_URL=
+GITLAB_WORKFLOW_TOKEN=
