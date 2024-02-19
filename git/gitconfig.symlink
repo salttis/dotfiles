@@ -1,9 +1,10 @@
 [user]
-    name = Juri Saltbacka
-    email = juri.saltbacka@gmail.com
+  name = Juri Saltbacka
+	email = juri.saltbacka@gmail.com
 
 [includeIf "gitdir:~/Work/**"]
-    path = ~/.gitconfig.work
+  path = ~/.gitconfig.work
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
