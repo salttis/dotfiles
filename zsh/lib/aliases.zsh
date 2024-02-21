@@ -48,6 +48,13 @@ if [ -n "$OS_MAC" ]; then
   alias free="free"
 fi
 
+alias rm_node_modules="fd 'node_modules' -u | \
+  xargs du -sh | \
+  sort -hr | \
+  fzf -m --header 'Select node_modules to remove' --preview 'cat $(dirname {2})/package.json' | \
+  awk '{print $2}' | \
+  xargs -r rm -rf"
+
 # Vim
 alias vim="nvim"
 alias v="vim"
