@@ -53,6 +53,7 @@ cask "raycast"
 cask "readdle-spark"
 cask "slack"
 cask "spotify"
+cask "toggl-track"
 cask "visual-studio-code"
 cask "vlc"
 
