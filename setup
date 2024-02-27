@@ -56,6 +56,8 @@ copy_example_files() {
 	_files=$(find "$DOTFILES" -name '*.example')
 	for abs_file in $_files; do
 		_example=".$(basename "${abs_file%.example}")"
+		# Check that the file doesnt already exist
+		[ -f "$HOME/$_example" ] && echo_warn "File already exists: $HOME/$_example" && continue
 		cp -v -n "$abs_file" "$HOME/$_example"
 	done
 
