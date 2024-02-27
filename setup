@@ -42,7 +42,7 @@ create_symlinks() {
 	echo_info "Symlinking SSH config"
 
 	mkdir -p "$HOME/.ssh"
-	ln -sfv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Synced Applications/ssh/config" "$HOME/.ssh/config"
+	ln -sfv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Sync/ssh/config" "$HOME/.ssh/config"
 
 	echo
 }
