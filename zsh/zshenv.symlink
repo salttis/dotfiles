@@ -35,4 +35,7 @@ export GPG_TTY="$(tty)"
 # AWS Vault settings for projects
 export DEFAULT_AWS_VAULT_PROFILE=$(whoami)
 
+# Virtuel environment
+export VENV=~/.venv
+
 [[ -s "$HOME/.zshenv-extra" ]] && source "$HOME/.zshenv-extra"
