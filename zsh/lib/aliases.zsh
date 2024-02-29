@@ -58,3 +58,6 @@ alias rm_node_modules="fd 'node_modules' -u | \
 # Vim
 alias vim="nvim"
 alias v="vim"
+
+# Kitty
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
