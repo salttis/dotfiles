@@ -259,6 +259,7 @@ done
 echo_info "Installing applications from Mac App Store..."
 
 mas install 497799835 # Xcode
+mas install 640199958 # Developer
 
 # Finalize
 # ========
