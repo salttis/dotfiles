@@ -253,6 +253,13 @@ for app in "${dock_apps_to_add[@]}"; do
     dockutil --add "$app" --no-restart &>/dev/null
 done
 
+# Mac App Store
+# =============
+
+echo_info "Installing applications from Mac App Store..."
+
+mas install 497799835 # Xcode
+
 # Finalize
 # ========
 
