@@ -256,10 +256,22 @@ done
 # Mac App Store
 # =============
 
-echo_info "Installing applications from Mac App Store..."
-
+# First install Xcode so we can install other apps
+echo_info "Installing Xcode from Mac App Store..."
 mas install 497799835 # Xcode
-mas install 640199958 # Developer
+
+# Install Xcode command line tools
+echo_info "Installing Xcode command line tools..."
+xcode-select --install
+
+# Accept Xcode license
+echo_info "Accepting Xcode license..."
+sudo xcodebuild -license accept
+
+# Install apps from Mac App Store
+echo_info "Installing apps from Mac App Store..."
+mas install 640199958 # Apple Developer
+mas install 571213070 # Davinci Resolve
 
 # Finalize
 # ========
