@@ -274,6 +274,7 @@ echo_info "Installing apps from Mac App Store..."
 mas install 640199958 # Apple Developer
 mas install 571213070 # Davinci Resolve
 mas install 409201541 # Pages
+mas install 409203825 # Numbers
 
 # Finalize
 # ========
