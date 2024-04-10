@@ -40,6 +40,10 @@ zinit light starship/starship
 # Source non version controlled files only if they exist.
 [[ -s "$HOME/.zshrc-extra" ]] && source "$HOME/.zshrc-extra"
 
+# Gcloud
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+
 # If there is a .env file in the directory where zsh is started, source it.
 if [[ -f .env ]]; then
     source .env
