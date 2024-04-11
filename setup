@@ -64,6 +64,22 @@ copy_example_files() {
 	echo
 }
 
+create_config_symlinks() {
+	local _files
+	local _symlinked
+
+	echo_info "Symlinking all files in config folder."
+
+	_files=$(find "$DOTFILES/config" -mindepth 1)
+	for abs_file in $_files; do
+		_symlinked="$(basename "${abs_file}")"
+		ln -sfv "$abs_file" "$HOME/.config/$_symlinked"
+	done
+
+	echo
+
+}
+
 run_install_scripts() {
 	for file in $(find $DOTFILES -name 'install.sh'); do
 		echo_info "Running ${file#$DOTFILES/}..."
@@ -85,6 +101,7 @@ main() {
 	update_dotfiles
 	ask_for_sudo_permissions
 	create_symlinks
+	create_config_symlinks
 	copy_example_files
 	run_install_scripts
 	run_setup_scripts
