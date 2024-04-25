@@ -64,8 +64,8 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
-defaults write com.apple.finder QuitMenuItem -bool true
+# Disabled: Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool false
 
 # Disable window animations and Get Info animations in Finder
 defaults write com.apple.finder DisableAllAnimations -bool true
@@ -89,8 +89,8 @@ defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
-# Display full POSIX path as Finder window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+# Disabled: Display full POSIX path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -148,13 +148,13 @@ defaults write com.apple.dock launchanim -bool false
 # Remove the auto-hiding Dock delay
 defaults write com.apple.Dock autohide-delay -float 0
 
-# Remove the animation when hiding/showing the Dock
-defaults write com.apple.dock autohide-time-modifier -float 0.3
+# Remove the slow animation when hiding/showing the Dock
+defaults write com.apple.dock autohide-time-modifier -float 0.15
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
-# Make Dock icons of hidden applications translucent
+# Disabled: Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool false
 
 # Enable iTunes track notifications in the Dock
@@ -233,16 +233,18 @@ dock_apps_to_remove=(
 )
 
 dock_apps_to_add=(
+    "/Applications/Safari.app"
+    "/Applications/Google Chrome.app"
     "/Applications/Arc.app"
     "/Applications/Spark Desktop.app"
     "/Applications/Rise.app"
+    "/Applications/Spotify.app"
     "/Applications/Slack.app"
     "/Applications/Discord.app"
-    "/System/Applications/App Store.app"
     "/System/Applications/System Settings.app"
     "/Applications/Notion.app"
-    "/Applications/kitty.app"
     "/Applications/Visual Studio Code.app"
+    "/Applications/iTerm.app"
 )
 
 for app in "${dock_apps_to_remove[@]}" "${dock_apps_to_add[@]}"; do
