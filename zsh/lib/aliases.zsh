@@ -61,3 +61,8 @@ alias v="vim"
 
 # Kitty
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+
+# Homebrew
+alias bup="brew update && brew upgrade && brew cleanup -s"
+alias bupc="brew update && brew upgrade --cask && brew cleanup -s"
+alias bi="brew install"
