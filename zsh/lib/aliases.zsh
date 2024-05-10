@@ -27,6 +27,8 @@ alias gg="lazygit"
 # System
 alias df="df -h"
 alias du="du -h"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias largedirs="du -d2 -h -t2M | sort -hr"
 
 [ -n "$OS_MAC" ] && alias nproc="sysctl hw.ncpu | awk '{print \$2}'"
 CORES=`nproc`
@@ -51,7 +53,7 @@ fi
 alias rm_node_modules="fd 'node_modules' -u | \
   xargs du -sh | \
   sort -hr | \
-  fzf -m --header 'Select node_modules to remove' --preview 'cat $(dirname {2})/package.json' | \
+  fzf -m --header 'Select node_modules to remove' --preview 'cat {2}../package.json' | \
   awk '{print $2}' | \
   xargs -r rm -rf"
 
