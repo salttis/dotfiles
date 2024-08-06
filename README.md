@@ -2,7 +2,7 @@
 
 ```sh
 export DOTFILES="$HOME/.dotfiles"
-git clone git@github.com:3bola/dotfiles.git $DOTFILES
+git clone https://github.com/salttis/dotfiles.git $DOTFILES
 $DOTFILES/setup
 ```
 
