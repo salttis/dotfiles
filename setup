@@ -70,6 +70,8 @@ create_config_symlinks() {
 
 	echo_info "Symlinking all files in config folder."
 
+	mkdir $HOME/.config || true
+
 	_files=$(find "$DOTFILES/config" -mindepth 1)
 	for abs_file in $_files; do
 		_symlinked="$(basename "${abs_file}")"
@@ -98,7 +100,7 @@ run_setup_scripts() {
 
 main() {
 	check_system
-	update_dotfiles
+	#update_dotfiles
 	ask_for_sudo_permissions
 	create_symlinks
 	create_config_symlinks
