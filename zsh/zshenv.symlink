@@ -23,6 +23,8 @@ export PATH="$PATH:/usr/sbin"
 export PATH="$PATH:/bin"
 export PATH="$PATH:/sbin"
 
+export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
+
 # Default editor
 export EDITOR="code"
 
