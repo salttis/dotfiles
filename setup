@@ -60,10 +60,12 @@ create_symlinks() {
 		ln -sfv "$abs_file" "$HOME/$_symlinked"
 	done
 
-	echo_info "Symlinking SSH config"
+	mkdir -p "$HOME/.ssh" 2> /dev/null || true
 
-	mkdir -p "$HOME/.ssh" || true
-	#ln -sfv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Sync/ssh/config" "$HOME/.ssh/config"
+	if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ]; then
+		echo_info "Symlinking SSH config from iCloud Drive"
+		ln -sfv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Sync/ssh/config" "$HOME/.ssh/config"
+	fi
 
 	echo
 }
