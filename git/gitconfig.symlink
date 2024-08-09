@@ -1,9 +1,12 @@
 [user]
-  name = Juri Saltbacka
+	name = Juri Saltbacka
 	email = juri.saltbacka@gmail.com
 
+[includeIf "gitdir:~/Projects/**"]
+	path = ~/.gitconfig.hiq
+
 [includeIf "gitdir:~/Work/Zoan/**"]
-  path = ~/.gitconfig.zoan
+	path = ~/.gitconfig.zoan
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
