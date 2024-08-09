@@ -18,7 +18,7 @@ check_system() {
 update_dotfiles() {
 	if [ -d "$DOTFILES/.git" ]; then
 		echo_info "Updating dotfiles..."
-		git --work-tree="$DOTFILES" --git-dir="$DOTFILES/.git" pull origin master || true
+		git --work-tree="$DOTFILES" --git-dir="$DOTFILES/.git" pull origin master 2> /dev/null || true
 	fi
 }
 
