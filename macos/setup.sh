@@ -262,14 +262,6 @@ done
 echo_info "Installing Xcode from Mac App Store..."
 mas install 497799835 # Xcode
 
-# Install Xcode command line tools
-echo_info "Installing Xcode command line tools..."
-xcode-select --install
-
-# Accept Xcode license
-echo_info "Accepting Xcode license..."
-sudo xcodebuild -license accept
-
 # Install apps from Mac App Store
 echo_info "Installing apps from Mac App Store..."
 
