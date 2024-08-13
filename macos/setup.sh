@@ -266,11 +266,11 @@ mas install 497799835 # Xcode
 echo_info "Installing apps from Mac App Store..."
 
 mas install 640199958 # Apple Developer
-mas install 571213070 # Davinci Resolve
+#mas install 571213070 # Davinci Resolve
 mas install 409201541 # Pages
 mas install 409203825 # Numbers
 mas install 1230249825 # VMWare Remote Console
-mas install 517914548 # Dashlane
+#mas install 517914548 # Dashlane
 
 # Finalize
 # ========
