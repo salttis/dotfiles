@@ -233,16 +233,16 @@ dock_apps_to_remove=(
 )
 
 dock_apps_to_add=(
-    "/Applications/Safari.app"
+    #"/Applications/Safari.app"
     "/Applications/Google Chrome.app"
     "/Applications/Arc.app"
     "/Applications/Spark Desktop.app"
     "/Applications/Rise.app"
     "/Applications/Spotify.app"
     "/Applications/Slack.app"
-    "/Applications/Discord.app"
+    #"/Applications/Discord.app"
     "/System/Applications/System Settings.app"
-    "/Applications/Notion.app"
+    #"/Applications/Notion.app"
     "/Applications/Visual Studio Code.app"
     "/Applications/iTerm.app"
 )
