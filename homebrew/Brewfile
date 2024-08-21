@@ -6,6 +6,7 @@ tap "homeport/tap"
 
 # CLI
 
+brew "1password-cli"
 brew "awscli"
 brew "azure-cli"
 brew "bat"
