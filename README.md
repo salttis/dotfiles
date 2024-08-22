@@ -1,32 +1,38 @@
 # Dotfiles
 
 ```sh
-DOTFILES="~/.dotfiles" git clone https://github.com/salttis/dotfiles.git $DOTFILES && $DOTFILES/setup
+DOTFILES="~/.dotfiles" git clone https://github.com/salttis/dotfiles.git $DOTFILES && cd $DOTFILES && chmod +x run.sh && ./run.sh
 ```
 
-## What these dotfiles do?
+# Dotfiles flow
 
-- Set up macOS with required developer tools
-    - Xcode with Command Line Tools
-    - Rosetta
-- Creates symlinks for shared system configuration
-    - ZSH with aliases
-    - SSH
-- Copies example files for environment configuration
-- Creates shared XDG configurations files
-- Runs installations scripts for
-    - Homebrew packages
-    - Homebrew cask packages
-    - Fonts
-    - VSCode plugins
-    - App Store applications
-- Sets up macOS system settings
-    - Sensible system defaults
-    - Desktop & Dock behaviour
-- Keeps the system and applications updated
+1. Check system
+2. Self-update
+3. Request sudo privileges
 
-## TODO
+4. Check and install XCode and Command Line Tools
+5. Check and install Rosetta
 
-- [ ] Look into [mackup](https://github.com/lra/mackup)
-- [ ] Sync VSCode config
-- [ ] How to install Rise calendar
+6. Create symbolic links
+7. Create configuration symbolic links
+8. Copy example files
+
+9. Run install scripts
+
+   1. Install Homebrew bundle
+      - CLI Apps
+      - Cask Apps
+      - Fonts
+      - VSCode Plugins
+
+10. Run setup scripts
+
+    1. Setup macOS
+       - System Settings
+       - AppStore Applications
+       - Desktop & Dock Behaviour
+    2. Setup workspaces
+       - Folders
+       - SSH
+
+11. Check for system updates
