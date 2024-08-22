@@ -2,7 +2,7 @@
 
 # See https://macos-defaults.com/ for list of defaults
 
-. $DOTFILES/lib/functions.sh
+. "$DOTFILES"/lib/functions.sh
 
 # Settings
 # ========
@@ -39,6 +39,9 @@ defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 # and the command needs to be entered again for every restart.
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
+
+# F1, F2, .. keys function as standard function keys
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
 # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -267,8 +270,8 @@ echo_info "Installing apps from Mac App Store..."
 
 mas install 640199958 # Apple Developer
 #mas install 571213070 # Davinci Resolve
-mas install 409201541 # Pages
-mas install 409203825 # Numbers
+mas install 409201541  # Pages
+mas install 409203825  # Numbers
 mas install 1230249825 # VMWare Remote Console
 #mas install 517914548 # Dashlane
 
@@ -287,4 +290,3 @@ APPS=(
 for APP in "${APPS[@]}"; do
     killall "$APP" &>/dev/null
 done
-
