@@ -21,6 +21,8 @@ source $HOMEBREW_PREFIX/opt/zinit/zinit.zsh
 
 # Plugins
 
+zinit wait lucid light-mode for lukechilds/zsh-nvm
+
 # Plugin history-search-multi-word loaded with investigating.
 zinit load zdharma-continuum/history-search-multi-word
 
@@ -37,6 +39,11 @@ zinit ice as"command" from"gh-r" \
           atpull"%atclone" src"init.zsh"
 zinit light starship/starship
 
+# Node Version Manager
+export NVM_COMPLETION=true
+export NVM_SYMLINK_CURRENT=true
+zinit wait lucid light-mode for lukechilds/zsh-nvm
+
 # Source non version controlled files only if they exist.
 [[ -s "$HOME/.zshrc-extra" ]] && source "$HOME/.zshrc-extra"
 
@@ -49,6 +56,6 @@ if [[ -f .env ]]; then
     source .env
 fi
 
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# iTerm2 integrations
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
