@@ -1,7 +1,8 @@
 # Dotfiles
 
 ```sh
-DOTFILES="~/.dotfiles" git clone https://github.com/salttis/dotfiles.git $DOTFILES && cd $DOTFILES && chmod +x run.sh && ./run.sh
+git clone https://github.com/salttis/dotfiles.git ~/.dotfiles
+~/.dotfiles/run.sh
 ```
 
 # Dotfiles flow
@@ -14,8 +15,16 @@ DOTFILES="~/.dotfiles" git clone https://github.com/salttis/dotfiles.git $DOTFIL
 5. Check and install Rosetta
 
 6. Create symbolic links
-7. Create configuration symbolic links
-8. Copy example files
+   1. Setup shared zsh configuration
+      - Some useful aliases
+      - Adds zsh plugins with Zinit plugin manager
+        - lukechilds/zsh-nvm - Lazyloaded NVM
+        - zdharma-continuum/history-search-multi-word - Better Ctrl-R history
+        - zsh-users/zsh-autosuggestions - Fish-like autosuggestions
+        - zdharma-continuum/fast-syntax-highlighting - Syntax highlighting
+        - starship/starship - Zsh terminal theme
+7. Create shared XDG configuration
+8. Copy example files for system specific configuration (not symlinks)
 
 9. Run install scripts
 
@@ -33,6 +42,6 @@ DOTFILES="~/.dotfiles" git clone https://github.com/salttis/dotfiles.git $DOTFIL
        - Desktop & Dock Behaviour
     2. Setup workspaces
        - Folders
-       - SSH
+       - Sync SSH keys from iCloud
 
 11. Check for system updates
