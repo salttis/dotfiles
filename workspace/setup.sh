@@ -7,6 +7,7 @@ folders=(
 )
 
 tools=(
+    yarn
     browser-sync
     eslint
     pnpm
@@ -14,6 +15,7 @@ tools=(
     serve
     typescript
     vercel
+    contentful-cli
 )
 
 echo_info "Setting up workspace..."
