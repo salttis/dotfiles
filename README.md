@@ -1,47 +1,59 @@
 # Dotfiles
 
+A minimal macOS setup with essential tools and configurations.
+
+## Quick Start
+
 ```sh
 git clone https://github.com/salttis/dotfiles.git ~/.dotfiles
-~/.dotfiles/run.sh
+~/.dotfiles/install.sh
 ```
 
-# Dotfiles flow
+## What it does
 
-1. Check system
-2. Self-update
-3. Request sudo privileges
+This script sets up a minimal but complete development environment:
 
-4. Check and install XCode and Command Line Tools
-5. Check and install Rosetta
+1. **Install Xcode Command Line Tools**
 
-6. Create symbolic links
-   1. Setup shared zsh configuration
-      - Some useful aliases
-      - Adds zsh plugins with Zinit plugin manager
-        - lukechilds/zsh-nvm - Lazyloaded NVM
-        - zdharma-continuum/history-search-multi-word - Better Ctrl-R history
-        - zsh-users/zsh-autosuggestions - Fish-like autosuggestions
-        - zdharma-continuum/fast-syntax-highlighting - Syntax highlighting
-        - starship/starship - Zsh terminal theme
-7. Create shared XDG configuration
-8. Copy example files for system specific configuration (not symlinks)
+   - Developer tools and compilers
 
-9. Run install scripts
+2. **Install Homebrew**
 
-   1. Install Homebrew bundle
-      - CLI Apps
-      - Cask Apps
-      - Fonts
-      - VSCode Plugins
+   - Package manager for macOS
+   - Handles both Intel and Apple Silicon Macs
 
-10. Run setup scripts
+3. **Install Essential Packages**
 
-    1. Setup macOS
-       - System Settings
-       - AppStore Applications
-       - Desktop & Dock Behaviour
-    2. Setup workspaces
-       - Folders
-       - Sync SSH keys from iCloud
+   - CLI tools: `bat`, `eza`, `git`, `nvm`, `tree`, `jq`, `ffmpeg`
+   - Fonts: Commit Mono, Hack, and Sauce Code Pro Nerd Fonts
 
-11. Check for system updates
+4. **Setup Node.js Development**
+
+   - Install Node.js LTS via NVM
+   - Install essential packages: `eslint`, `prettier`, `typescript`
+
+5. **Configure Shell**
+
+   - Symlink zsh configuration files (`.zshrc`, `.zshenv`, `.p10k.zsh`)
+
+6. **Configure Git**
+
+   - Symlink git configuration (`.gitconfig`)
+
+7. **Setup SSH Keys**
+
+   - Create SSH directory with proper permissions
+   - Sync SSH keys from iCloud Drive if available
+
+8. **Configure macOS**
+   - Show file extensions in Finder
+   - Disable window animations for better performance
+   - Enable function keys as standard function keys
+   - Show battery percentage in menu bar
+
+## Features
+
+- **Minimal**: Only essential tools and configurations
+- **Idempotent**: Safe to run multiple times
+- **Self-contained**: No external dependencies
+- **Fast**: Streamlined installation process
